@@ -3,11 +3,13 @@ import { Home } from './home/home';
 import { SongDirectory } from './song-directory/song-directory';
 import { QrCode } from './qr-code/qr-code';
 import { Contact } from './contact/contact';
+import { Recap } from './recap/recap';
 
 export const routes: Routes = [
     { path: '', component: Home },
     { path: 'SongDirectory', component: SongDirectory },
     {path: 'QrCode', component: QrCode},
     {path: 'Contact', component: Contact},
+    {path: 'Recap', component: Recap},
     { path: '**', redirectTo: '' }
 ];
