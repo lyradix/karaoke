@@ -16,6 +16,17 @@
             <p class="singerOrGroup"></p>
             <p class="title"></p>
         </div>
+    <div class="choices">
+        <h1>Autres choix ?</h1>
+        <div class="choicesBtn">
+             <button class="choiceBtn">
+            <h2><a>Oui</a></h2>
+        </button>
+        <button class="choiceBtn">
+            <h2><a>Non</a></h2>
+        </button>
+        </div>
+    </div>
 
     <style>
 
@@ -62,6 +73,22 @@
             width: 300px;
             height: 300px;
         }
+
+            .choices {
+                margin-top: 50px;
+            }
+            .choicesBtn {
+                display: flex;
+                justify-content: center;
+                gap: 50px;
+            }
+            .choiceBtn {
+                padding: 20px;
+                border: 1px solid #ccc;
+                width: 100px;
+                height: 100px;
+                cursor: pointer;
+            }   
 
         @media screen and (max-width: 600px) {
             .searchBar {
