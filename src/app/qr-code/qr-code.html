@@ -1,1 +1,73 @@
-<p>qr-code works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <div class="qrCodeContainer">
+            <div class="roomDetails">
+                <p class="room">salle</p>
+                <p class="date">date</p>
+                <p class="place">lieu</p>
+            </div>
+            <div class="qrCode">
+               <button class="qrcodeBtn">
+                <h2><a routerLink="/SongDirectory">QrCode</a></h2>
+               </button>
+            </div>
+           
+        </div>
+
+    <style>
+    .body{
+      font-family: Arial, sans-serif;
+    text-align: center;
+    justify-content: center;
+    padding: 50px;
+    }
+    .qrCodeContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-self: center;
+        margin-top: 3rem;
+        gap:3rem;
+    }
+
+    .roomDetails, .qrCode {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border: 1px solid #ccc;
+        padding: 20px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .qrCode {
+        align-items: center;
+        justify-content: center;
+    } 
+    
+    .qrcodeBtn {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+        height: 200px;
+        width: 200px;
+    }
+
+
+    </style>
+</body>
+</html>
