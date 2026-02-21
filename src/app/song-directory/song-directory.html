@@ -1,1 +1,68 @@
-<p>song-directory works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="searchBar">
+        <p class="textArea"></p><button class="searchButton">Search</button></div>
+        <div class="searchList">
+            <p class="responseBox"></p>
+        </div>
+
+        <div class="resultBox">
+            <p class="singerOrGroup"></p>
+            <p class="title"></p>
+        </div>
+
+    <style>
+
+          body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                justify-content: center;
+                padding: 50px;
+            }
+        .searchBar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .textArea {
+            width: 300px;
+            height: 30px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .searchButton {
+            margin-left: 10px;
+            padding: 5px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .resultBox {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            border: 1px solid #ccc;
+            /* width: 300px;
+            height: 300px; */
+        }
+        .singerOrGroup, .title {
+            color: #555;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 300px;
+            height: 300px;
+        }
+       
+    </style>
+</body>
+</html>
