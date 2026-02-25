@@ -7,7 +7,7 @@ import { Recap } from './recap/recap';
 
 export const routes: Routes = [
     { path: '', component: Home },
-    { path: 'SongDirectory', component: SongDirectory },
+    { path: 'SongDirectory', loadComponent: () => import('./song-directory/song-directory').then(m => m.SongDirectory) },
     {path: 'QrCode', component: QrCode},
     {path: 'Contact', component: Contact},
     {path: 'Recap', component: Recap},
