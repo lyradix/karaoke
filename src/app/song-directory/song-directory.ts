@@ -56,6 +56,7 @@ displaySongs(): void {
  filterResults(searchText: string): void {
   this.currentSearch = (searchText || '').trim().toLowerCase();
 
+
   if (!this.currentSearch) {
     this.filteredSongsList = [];
     return;
@@ -90,6 +91,7 @@ displaySongs(): void {
     }
     // remove from the visible filtered list
     this.filteredSongsList = this.filteredSongsList.filter(s => s !== song);
+
   }
 
   removeFromSelection(song: Song): void {
