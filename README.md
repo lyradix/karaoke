@@ -1,4 +1,4 @@
-
+npm i --save material-ui-search-bar
 
 ## launch the app
 

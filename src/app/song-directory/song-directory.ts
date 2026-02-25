@@ -15,7 +15,7 @@ interface Song { title: string; }
 })
 export class SongDirectory implements OnInit {
 
-  public apiUrl = 'http://192.168.1.164:8000';
+  public apiUrl = 'http://127.0.0.1:8000';
 
   songData: Song[] = [];
   filteredSongsList: Song[] = [];
@@ -31,32 +31,28 @@ export class SongDirectory implements OnInit {
           console.log(localStorage.getItem('songs'))
   }
 
-  displaySongs() {
-    const cachedData = localStorage.getItem('songs');
-    
-    if (cachedData) {
-      this.songData = JSON.parse(cachedData) || [];
-      // Keep filteredSongsList empty until user searches
-      return;
+// displaySongs() {
+//   this.songData = [
+//     { title: "The Beatles" },
+//     { title: "A Sky Full of Stars" },
+//     { title: "Hello" },
+//     { title: "Another Love" }
+//   ];
+// }
+
+displaySongs(): void {
+  this.http.get<Song[]>(`${this.apiUrl}/songs`).subscribe({
+    next: (result) => {
+      console.log("API result:", result);
+      this.songData = result;
+      console.log("songData après assignation:", this.songData);
+    },
+    error: (error) => {
+      console.error("Erreur API:", error);
+      this.songData = [];
     }
-
-    // If not in cache, fetch from API and store it
-    this.http.get<Song[]>(`${this.apiUrl}/songs`).subscribe(
-      (result) => {
-        this.songData = result || [];
-        // Store in localStorage for future use
-        localStorage.setItem('songs', JSON.stringify(this.songData));
-        // Keep filteredSongsList empty until user searches
-  
-      },
-      (error) => {
-        console.error('Error fetching songs:', error);
-        this.songData = [];
-        this.filteredSongsList = [];
-      }
-    );
-  }
-
+  });
+}
  filterResults(searchText: string): void {
   this.currentSearch = (searchText || '').trim().toLowerCase();
 
@@ -65,13 +61,10 @@ export class SongDirectory implements OnInit {
     return;
   }
 
-  const baseList = this.songData.filter(
-    s => !this.selectedSongs.some(sel => sel.title === s.title)
-  );
-
-  this.filteredSongsList = baseList.filter(song =>
-    song.title.toLowerCase().includes(this.currentSearch)
-  );
+  this.filteredSongsList = this.songData.filter(song => {
+    const title = song.title ?? '';
+    return title.toLowerCase().includes(this.currentSearch);
+  });
 }
 
   // Highlight all matching characters in the title
