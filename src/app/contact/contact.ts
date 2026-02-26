@@ -15,9 +15,6 @@ export class Contact {
   nicknameValue: string = '';
   emailValue: string = '';
 
-
-
-
   constructor(private router: Router,
     private http: HttpClient,
         private cdr: ChangeDetectorRef) {}
