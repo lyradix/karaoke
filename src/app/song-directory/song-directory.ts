@@ -15,7 +15,7 @@ interface Song { title: string; }
 })
 export class SongDirectory implements OnInit {
 
-  public apiUrl = 'http://127.0.0.1:8000';
+  public apiUrl = 'http://192.168.1.164:8000';
 
   songData: Song[] = [];
   filteredSongsList: Song[] = [];
