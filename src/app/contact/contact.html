@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form (submit)="onSubmit($event)" class="formContact">
+    <form (ngSubmit)="onSubmit($event)" class="formContact">
         <label for="nickname">Surnom:</label>
         <input type="text" id="nickname" name="nickname" required
          (change)="nickname($event)">
@@ -14,19 +14,20 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required
          (change)="email($event)">
-<!-- 
-        <label for="message">Suggestion:</label><br>
-        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br> -->
+         
+        <button type="submit" >
+            Valider
+        </button>
 
-        <button type="submit">
-            Submit</button>
-            
-
-        <button >
-            <a routerLink="/SongDirectory"></a>
-          next</button>
     </form>
 
+        <button >
+            <h2>
+                <a routerLink="/SongDirectory">
+                   ->
+                </a>
+            </h2>
+        </button>
 
     <style>
         body {
@@ -63,6 +64,10 @@
         }
         button:hover {
             background-color: #0056b3;
+        }
+
+        a{
+            list-style: none;
         }
     </style>
 </body>
